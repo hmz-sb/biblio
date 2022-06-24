@@ -10,4 +10,6 @@ import java.util.List;
 public interface MemberRepository extends JpaRepository<Member, Long> {
      List<Member> findAllByOrderByFirstNameAscMiddleNameAscLastNameAsc();
      Long countByType(String type);
+     List<Member> findMemberByID (Member id);
+     List<Member> findMemberByUser (Member userId);
 }

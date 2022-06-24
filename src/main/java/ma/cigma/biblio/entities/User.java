@@ -38,7 +38,7 @@ public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-    private Long id;
+    private Long userId;
 
     @NotNull
     @Column(name = "display_name")
@@ -66,6 +66,9 @@ public class User implements Serializable {
 
     @Column(name = "last_modified_date")
     private Date lastModifiedDate;
+
+
+
 
     @ManyToMany
     @JoinColumn

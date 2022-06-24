@@ -1,10 +1,7 @@
 package ma.cigma.biblio.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -20,16 +17,13 @@ import java.util.Date;
 @ToString
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "Periodic")
-public class Periodic implements Serializable {
+public class Periodic extends Document implements Serializable {
     /**
      *
      */
     private static final long serialVersionUID = 1L;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    private Long id;
+
 
 
     @JoinColumn(name = "title")
@@ -59,12 +53,12 @@ public class Periodic implements Serializable {
     @Column(name = "create_date")
     private Date createDate;
 
-    @JsonIgnore
+
     @ManyToOne
     @JoinColumn(name = "document_id")
-    @NotNull(message = "*Please select cdocument")
     private Document document;
 
-
+    @Column(name = "published_date")
+    private Date publishedDate;
 
 }

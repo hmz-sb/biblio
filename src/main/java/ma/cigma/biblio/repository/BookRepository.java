@@ -15,4 +15,7 @@ public interface BookRepository extends JpaRepository<Book, Long> {
      List<Book> findByDocument(Document document);
      List<Book> findByDocumentAndStatus(Document document, Integer status);
      Long countByStatus(Integer status);
+     List<Book> findBookByName(Book Title);
+     List<Book> findBookByAuteur(Book authors);
+     List<Book> findBookByNameAndAuteur (Book Title,Book authors);
 }

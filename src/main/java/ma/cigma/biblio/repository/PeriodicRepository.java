@@ -14,4 +14,8 @@ public interface PeriodicRepository extends JpaRepository<Periodic, Long> {
     List<Periodic> findByDocument(Document document);
     List<Periodic> findByDocumentAndStatus(Document document, Integer status);
     Long countByStatus(Integer status);
+    List<Periodic> findByname (Periodic Title);
+    List<Periodic> findbydate (Periodic publishedDate);
+    List<Periodic> findByNameAndDate (Periodic Title,Periodic publishedDate);
+
 }

@@ -21,7 +21,7 @@ import java.util.List;
 @NoArgsConstructor
 @ToString
 @Table(name = "document")
-public class Document implements Serializable {
+public  class Document implements Serializable {
 
     /**
      *
@@ -54,6 +54,10 @@ public class Document implements Serializable {
     @JsonIgnore
     @OneToMany(mappedBy = "document", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Book> books;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "document", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Periodic> periodics;
 
 
 

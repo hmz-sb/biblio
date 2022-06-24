@@ -1,5 +1,6 @@
 package ma.cigma.biblio.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -64,6 +65,15 @@ public class Member implements Serializable {
 
     @Column(name = "email")
     private String email;
+
+    @Column(name = "nbr_borrow_book")
+    private Integer nbrBorrowBook;
+
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "User_id")
+    @NotNull(message = "*Please select cdocument")
+    private User userId;
 
     public Member(@NotNull String type, @NotNull String firstName, @NotNull String middleName, @NotNull String lastName,
                   @NotNull String gender, @NotNull Date dateOfBirth, @NotNull Date joiningDate) {

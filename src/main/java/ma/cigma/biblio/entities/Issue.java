@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import ma.cigma.biblio.service.IssuedBookService;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -48,11 +49,15 @@ public class Issue implements Serializable {
     @JoinColumn(name = "member_id")
     private Member member;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "issue", cascade = CascadeType.ALL)
-    private List<IssuedBook> issuedBooks;
 
 
 
+    @Enumerated(EnumType.STRING)
+    private Action action;
+
+
+    public List<IssuedBook> getIssuedBooks() {
+        return getIssuedBooks();
+    }
 }
 

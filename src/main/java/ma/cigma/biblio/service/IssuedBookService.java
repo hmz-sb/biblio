@@ -1,6 +1,5 @@
 package ma.cigma.biblio.service;
 
-import ma.cigma.biblio.common.Constants;
 import ma.cigma.biblio.entities.Book;
 import ma.cigma.biblio.entities.IssuedBook;
 
