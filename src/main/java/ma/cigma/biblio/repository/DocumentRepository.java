@@ -1,12 +1,12 @@
 package ma.cigma.biblio.repository;
 
-import ma.cigma.biblio.entities.Category;
+import ma.cigma.biblio.entities.Document;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public interface CategoryRepository extends JpaRepository<Category, Long> {
-     List<Category> findAllByOrderByNameAsc();
+public interface DocumentRepository extends JpaRepository<Document, Long> {
+     List<Document> findAllByOrderByNameAsc();
 }

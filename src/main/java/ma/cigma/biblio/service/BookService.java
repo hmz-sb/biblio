@@ -1,10 +1,8 @@
 package ma.cigma.biblio.service;
 
-import ma.cigma.biblio.common.Constants;
 import ma.cigma.biblio.entities.Book;
-import ma.cigma.biblio.entities.Category;
+import ma.cigma.biblio.entities.Document;
 
-import java.util.Date;
 import java.util.List;
 
 public interface BookService {
@@ -20,9 +18,9 @@ public interface BookService {
 
     public List<Book> get(List<Long> ids);
 
-    public List<Book> getByCategory(Category category);
+    public List<Book> getByDocument(Document document);
 
-    public List<Book> geAvailabletByCategory(Category category);
+    public List<Book> geAvailabletByDocument(Document document);
 
     public Book addNew(Book book) ;
 

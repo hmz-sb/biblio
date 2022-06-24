@@ -2,7 +2,6 @@ package ma.cigma.biblio.service.impl;
 
 import ma.cigma.biblio.mapping.BookMapping;
 import ma.cigma.biblio.service.BookService;
-import ma.cigma.biblio.service.CategoryService;
 import ma.cigma.biblio.service.HomeService;
 import ma.cigma.biblio.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +19,7 @@ public class HomeServiceImpl implements HomeService {
 	private MemberServiceImpl memberService;
 	
 	@Autowired
-	private CategoryServiceImpl categoryService;
+	private DocumentServiceImpl documentService;
 	
 	@Autowired
 	private BookServiceImpl bookService;
@@ -33,7 +32,7 @@ public class HomeServiceImpl implements HomeService {
 		map.put("totalMembers", memberService.getTotalCount());
 		map.put("totalStudents", memberService.getStudentsCount());
 		map.put("totalParents", memberService.getParentsCount());
-		map.put("totalCategories", categoryService.getTotalCount());
+		map.put("totalCategories", documentService.getTotalCount());
 		map.put("totalBooks", bookService.getTotalCount());
 		map.put("totalIssuedBooks", bookService.getTotalIssuedBooks());
 		return map;

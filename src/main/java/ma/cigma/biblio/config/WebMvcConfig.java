@@ -7,7 +7,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
-//@PropertySource({"classpath:/properties/lms.properties", "classpath:/properties/messages.properties"})
+//@PropertySource({"classpath:/properties/application.properties", "classpath:/properties/messages.properties"})
 public class WebMvcConfig implements WebMvcConfigurer {
 
     @Bean

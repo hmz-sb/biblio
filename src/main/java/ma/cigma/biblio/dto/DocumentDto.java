@@ -13,7 +13,7 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString
-public class CategoryDto implements Serializable {
+public class DocumentDto implements Serializable {
     private  Long id;
     @NotNull(message = "*Please enter category name")
     @NotBlank(message = "*Please enter category name")

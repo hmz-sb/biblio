@@ -20,8 +20,8 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-@Table(name = "category")
-public class Category implements Serializable {
+@Table(name = "document")
+public class Document implements Serializable {
 
     /**
      *
@@ -33,13 +33,13 @@ public class Category implements Serializable {
     @Column(name = "id")
     private Long id;
 
-    @NotNull(message = "*Please enter category name")
-    @NotBlank(message = "*Please enter category name")
+    @NotNull(message = "*Please enter document name")
+    @NotBlank(message = "*Please enter document name")
     @Column(name = "name")
     private String name;
 
-    @NotNull(message = "*Please enter category short name")
-    @NotBlank(message = "*Please enter category short name")
+    @NotNull(message = "*Please enter document short name")
+    @NotBlank(message = "*Please enter document short name")
     @Length(max = 4, message = "*Must not exceed 4 characters.")
     @Column(name = "short_name")
     private String shortName;
@@ -52,7 +52,7 @@ public class Category implements Serializable {
     private Date createDate;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "document", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Book> books;
 
 

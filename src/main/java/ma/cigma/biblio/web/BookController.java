@@ -2,9 +2,9 @@ package ma.cigma.biblio.web;
 
 
 import ma.cigma.biblio.entities.Book;
-import ma.cigma.biblio.entities.Category;
+import ma.cigma.biblio.entities.Document;
 import ma.cigma.biblio.service.BookService;
-import ma.cigma.biblio.service.CategoryService;
+import ma.cigma.biblio.service.DocumentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,11 +26,11 @@ public class BookController {
 	private BookService bookService;
 	
 	@Autowired
-	private CategoryService categoryService;
+	private DocumentService documentService;
 	
-	@ModelAttribute(name = "categories")
-	public List<Category> categories() {
-		return categoryService.getAllBySort();
+	@ModelAttribute(name = "documents")
+	public List<Document> documents() {
+		return documentService.getAllBySort();
 	}
 	
 	@RequestMapping(value = {"", "/list"}, method = RequestMethod.GET)

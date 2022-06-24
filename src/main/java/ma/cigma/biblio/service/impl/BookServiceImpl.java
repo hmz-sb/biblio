@@ -3,7 +3,7 @@ package ma.cigma.biblio.service.impl;
 
 import ma.cigma.biblio.common.Constants;
 import ma.cigma.biblio.entities.Book;
-import ma.cigma.biblio.entities.Category;
+import ma.cigma.biblio.entities.Document;
 import ma.cigma.biblio.mapping.BookMapping;
 import ma.cigma.biblio.repository.BookRepository;
 import ma.cigma.biblio.service.BookService;
@@ -50,13 +50,12 @@ public class BookServiceImpl implements BookService {
 	public List<Book> get(List<Long> ids) {
 		return bookRepository.findAllById(ids);
 	}
-	
-	public List<Book> getByCategory(Category category) {
-		return bookRepository.findByCategory(category);
+
+	public List<Book> getByDocument(Document document) {return bookRepository.findByDocument(document);
 	}
-	
-	public List<Book> geAvailabletByCategory(Category category) {
-		return bookRepository.findByCategoryAndStatus(category, Constants.BOOK_STATUS_AVAILABLE);
+
+	public List<Book> geAvailabletByDocument(Document document) {
+		return bookRepository.findByDocumentAndStatus(document, Constants.BOOK_STATUS_AVAILABLE);
 	}
 	
 	public Book addNew(Book book) {

@@ -1,6 +1,5 @@
 package ma.cigma.biblio.dto;
 
-
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -13,7 +12,8 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString
-public class BookDto implements Serializable {
+public class PeriodicDto implements Serializable {
+
     private  Long id;
     private NotBlank title;
     private  String tag;
@@ -21,6 +21,6 @@ public class BookDto implements Serializable {
     private  String publisher;
     private  String isbn;
     private  Integer status;
-    private  Date createDate;
+    private Date createDate;
     private Document document;
 }

@@ -1,8 +1,8 @@
 package ma.cigma.biblio.web.dto;
 
 
-import ma.cigma.biblio.entities.Category;
-import ma.cigma.biblio.service.CategoryService;
+import ma.cigma.biblio.entities.Document;
+import ma.cigma.biblio.service.DocumentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,14 +12,14 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/rest/category")
-public class CategoryRestController {
+public class DocumentRestController {
 	
 	@Autowired
-	private CategoryService categoryService;
+	private DocumentService documentService;
 	
 	@GetMapping(value = {"/", "/list"})
-	public List<Category> all() {
-		return categoryService.getAll();
+	public List<Document> all() {
+		return documentService.getAll();
 	}
 
 }

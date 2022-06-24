@@ -2,8 +2,8 @@ package ma.cigma.biblio.web;
 
 
 import ma.cigma.biblio.common.Constants;
-import ma.cigma.biblio.entities.Category;
-import ma.cigma.biblio.service.CategoryService;
+import ma.cigma.biblio.entities.Document;
+import ma.cigma.biblio.service.DocumentService;
 import ma.cigma.biblio.service.IssueService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,16 +22,16 @@ public class IssueController {
 	private IssueService issueService;
 	
 	@Autowired
-	private CategoryService categoryService;
+	private DocumentService documentService;
 	
 	@ModelAttribute(name = "memberTypes")
 	public List<String> memberTypes() {
 		return Constants.MEMBER_TYPES;
 	}
 	
-	@ModelAttribute("categories")
-	public List<Category> getCategories() {
-		return categoryService.getAllBySort();
+	@ModelAttribute("documents")
+	public List<Document> getDocuments() {
+		return documentService.getAllBySort();
 	}
 	
 	@RequestMapping(value = {"/", "/list"}, method = RequestMethod.GET)

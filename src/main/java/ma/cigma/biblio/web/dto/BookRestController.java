@@ -2,9 +2,9 @@ package ma.cigma.biblio.web.dto;
 
 
 import ma.cigma.biblio.entities.Book;
-import ma.cigma.biblio.entities.Category;
+import ma.cigma.biblio.entities.Document;
 import ma.cigma.biblio.service.BookService;
-import ma.cigma.biblio.service.CategoryService;
+import ma.cigma.biblio.service.DocumentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,7 +21,7 @@ public class BookRestController {
 	private BookService bookService;
 	
 	@Autowired
-	private CategoryService categoryService;
+	private DocumentService documentService;
 	
 	@GetMapping(value = {"/", "/list"})
 	public List<Book> all() {
@@ -30,14 +30,14 @@ public class BookRestController {
 	
 	@GetMapping(value = "/{id}/list")
 	public List<Book> get(@PathVariable(name = "id") Long id) {
-		Category category = categoryService.get(id);
-		return bookService.getByCategory( category );
+		Document document = documentService.get(id);
+		return bookService.getByDocument( document );
 	}
 	
 	@GetMapping(value = "/{id}/available")
 	public List<Book> getAvailableBooks(@PathVariable(name = "id") Long id) {
-		Category category = categoryService.get(id);
-		return bookService.geAvailabletByCategory( category );
+		Document document = documentService.get(id);
+		return bookService.geAvailabletByDocument( document );
 	}
 	
 }

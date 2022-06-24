@@ -6,13 +6,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-
-import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+
 
 @Entity
 @Data
@@ -20,9 +19,8 @@ import java.util.Date;
 @NoArgsConstructor
 @ToString
 @Inheritance(strategy = InheritanceType.JOINED)
-@Table(name = "book")
-public class Book implements Serializable {
-
+@Table(name = "Periodic")
+public class Periodic implements Serializable {
     /**
      *
      */
@@ -69,6 +67,4 @@ public class Book implements Serializable {
 
 
 
-
 }
-
